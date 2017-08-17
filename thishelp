@@ -1,0 +1,33 @@
+-/ configure gedit
+	activate autosave 
+	gsettings set org.gnome.gedit.preferences.editor auto-save true
+	save each 1 minute
+	gsettings set org.gnome.gedit.preferences.editor auto-save-interval 1
+
+-/ Create a folder named third_party
+	add inside the following src project
+	.spdlog - for logs 
+	..catch - for testing
+
+-/ install if not available git, cmake, gcc, 
+
+
+-/ Run as follow
+	Create a build folder. Inside this folder run : 
+	cmake appFolder - for configuration
+	make            - to create the exeApp
+	Nb:
+	you can run each app separatly as examples or you can build all the apps
+
+
+
+
+---------------------------------------------
+Folder Organisation 
+
+/
+univers
+	src -- developped apps sources
+	include --- my lib
+	test    --- some test
+	third_party --- linked folder containing third party libs
