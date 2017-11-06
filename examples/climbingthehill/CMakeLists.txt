@@ -3,16 +3,15 @@ cmake_minimum_required(VERSION 3.0)
 
 find_package(Threads)
 
-add_executable(executable climbing.cpp )
+add_executable(executable climbing.cpp)
 
-include_directories(../../adouna/ ../../../thirdparty/spdlog/)
+#including univers for adouna and thirdparties
+include_directories(../../ ../../../thirdparty/)
 
 target_link_libraries(executable ${CMAKE_THREAD_LIBS_INIT})
 
 
 file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/logs")
-
-#add_test(NAME RunExample COMMAND (executable)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++17")
 

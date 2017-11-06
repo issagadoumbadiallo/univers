@@ -1,11 +1,9 @@
-#include "spdlog.h"
+#include "spdlog/spdlog.h"
 //#include "logger.h"
 //#include "tweakme.h"
 //#include "common.h"
 #include <chrono>
 #include <ctime>
-
-
 #include <iostream>
 #include <iomanip>
 //#include <thread>
@@ -26,7 +24,9 @@ public:
 
 template<typename T> void operator<<( const T* msg)
 {
-file->info(msg);
+	auto Cmsg="";
+	Cmsg=Cmsg & msg;
+	file->info(Cmsg);
 }
 
 /*    void i(const char* msg){

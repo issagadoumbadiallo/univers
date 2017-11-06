@@ -1,5 +1,5 @@
-#include "log.h"
+#include "adouna/log.h"
 
-LivingObj l;
+namespace globalobj{LivingObj log;}
 
 //Duree d;

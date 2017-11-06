@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include "globalConst.h"
+#include "adouna/globalConst.h"
 #include <algorithm>
 #include <string>
 #include <vector>
@@ -73,7 +73,7 @@ void BuildBlocs(int i, int j,int nbBoxes, Maille &blocs){
 	
 	;
 
-	if  (nbBoxes=2) return BuildTwoBlocks(i,j,blocs);
+	if  (nbBoxes==2) return BuildTwoBlocks(i,j,blocs);
 	
 	/* To be complete
 	if  (nbBoxes=3) {
@@ -273,7 +273,7 @@ class Grid{
 					
 					SetToFull(x,y);//the data have been updated
 				}
-				if (i==50) goto next;
+				if (i==1000) goto next;
 			}
 			next:
 			std::cout<<"Aggregate out "<<'\n';	
@@ -313,7 +313,7 @@ void ComputeBest(Grid & DataGrid, Grid * ptr_Score,int nbBoxes){
 			}	
 			//std::cout<<"am out"<<'\n';
 			//goto next;
-			if (i==50) goto next;
+			if (i==1000) goto next;
 			//std::cout<<"am out"<<j<<'\n';
 		}
 		std::cout<<"over for"<<'\n';
@@ -328,7 +328,9 @@ void ComputeBest(Grid & DataGrid, Grid * ptr_Score,int nbBoxes){
 
  int main() {
 
-	Grid File("/home/mickael/Climbing_the_hill/AREVA.csv");
+	globalobj::log<<"kljlk"<<"ljk";
+	
+	Grid File("/media/sf_cpproot/data/input/areva.csv");
 	
 	Grid Score(File.GetLasti(),File.GetLastj());
 
@@ -336,7 +338,7 @@ void ComputeBest(Grid & DataGrid, Grid * ptr_Score,int nbBoxes){
 	
 	assert(Score.GetLasti()!=0);
 	 
-	Score.Save("/home/mickael/Climbing_the_hill/AREVAScore.csv");
+	Score.Save("/media/sf_cpproot/data/output/areva_score.csv");
 	
 	return 0;
 }
